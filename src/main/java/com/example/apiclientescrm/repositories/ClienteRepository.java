@@ -13,5 +13,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
     List<Cliente>findClienteByNombreContaining(String nombre);
 
+    Cliente findClienteByIdclienteOrNombreEquals(Integer id, String nombre);
+
+    List<Cliente>findClienteByEmpresaOrderByNombreAsc(String empresa);
 
 }

@@ -33,4 +33,14 @@ public class ClienteService {
     public Cliente buscarPorID(Integer id){
         return clienteRepository.findById(id).orElse(null);
     }
+
+    public Cliente buscarClientePorIdONombre(Integer id, String nombre){
+        return clienteRepository.findClienteByIdclienteOrNombreEquals(id, nombre);
+    }
+
+    public List<Cliente> buscarClientePorEmpresaOrdenadoPorNombreAsc(String empresa){
+        return clienteRepository.findClienteByEmpresaOrderByNombreAsc(empresa);
+    }
+
+
 }

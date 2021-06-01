@@ -44,6 +44,8 @@ public class ClienteController {
             e.printStackTrace();
         }
         return clienteService.buscarPorID(unID);
-        }
+    }
+
+    //public Cliente buscarPorIdONombre(@PathVariable String id, )
 
 }
