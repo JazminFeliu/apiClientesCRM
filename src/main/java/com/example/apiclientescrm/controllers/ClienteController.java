@@ -3,9 +3,7 @@ package com.example.apiclientescrm.controllers;
 import com.example.apiclientescrm.entities.Cliente;
 import com.example.apiclientescrm.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -46,6 +44,16 @@ public class ClienteController {
         return clienteService.buscarPorID(unID);
     }
 
-    //public Cliente buscarPorIdONombre(@PathVariable String id, )
+    @PostMapping("clientes/nuevo")
+    public Cliente crear(@RequestBody Cliente cliente){
+        clienteService.save(cliente);
+        return cliente;
+    }
+
+    @DeleteMapping("clientes/borrar/{id}")
+    public String borrar(@PathVariable Integer id) {
+        clienteService.deletebyId(id);
+        return "cliente borrado";
+    }
 
 }

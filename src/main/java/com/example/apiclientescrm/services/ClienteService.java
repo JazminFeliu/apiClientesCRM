@@ -43,4 +43,13 @@ public class ClienteService {
     }
 
 
+    public Cliente save(Cliente cliente) {
+        clienteRepository.save(cliente);
+        return cliente;
+    }
+
+    public void deletebyId(Integer id){
+        clienteRepository.deleteById(id);
+    }
 }
+
