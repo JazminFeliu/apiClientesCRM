@@ -46,6 +46,4 @@ public class ClienteController {
         return clienteService.buscarPorID(unID);
     }
 
-    //public Cliente buscarPorIdONombre(@PathVariable String id, )
-
 }
