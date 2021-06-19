@@ -33,8 +33,6 @@ public class ProductoService {
         return productoRepository.findProductosByNombreContaining(nombre);
     }
 
-
-
     public List<Producto>findProductosByCategoriaContaining(String categoria){
         return productoRepository.findProductosByCategoriaContaining(categoria);
     }
